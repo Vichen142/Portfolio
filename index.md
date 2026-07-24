@@ -36,5 +36,5 @@ Welcome to my portfolio! I specialize in building end-to-end machine learning pi
 
 ## 📄 Resume & Contact
 * 📄 [Download PDF Resume](./HENRY_OPEYEMI_FlowCV_Resume_2026-07-02.pdf)
-* 💼 [LinkedIn Profile](https://linkedin.com)
+* 💼 [LinkedIn Profile](https://www.linkedin.com/in/opeyemi-henry-21827b29b/?skipRedirect=true)
 * 🐙 [GitHub Profile](https://github.com/Vichen142)
