@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blinkit Grocery Performance Analytics | Opeyemi Henry</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --accent-blue: #38bdf8;
+            --accent-purple: #c084fc;
+            --accent-emerald: #34d399;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        header {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 0.8rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            background: rgba(52, 211, 153, 0.15);
+            color: var(--accent-emerald);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .content-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: var(--accent-emerald);
+            margin-bottom: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        h2:first-of-type { margin-top: 0; }
+
+        p, li { color: var(--text-muted); font-size: 1rem; margin-bottom: 1rem; }
+        ul { margin-left: 1.5rem; margin-bottom: 1rem; }
+
+        .dashboard-container {
+            margin: 1.5rem 0;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: rgba(15, 23, 42, 0.6);
+            padding: 0.5rem;
+        }
+
+        .dashboard-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .btn-github {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+            margin-top: 0.5rem;
+        }
+
+        .btn-github:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <a href="./index.html" class="back-link">&larr; Back to Portfolio</a>
+
+    <header>
+        <span class="badge">Business Intelligence & Analytics</span>
+        <h1>📈 Blinkit Grocery Performance Analytics</h1>
+    </header>
+
+    <div class="content-card">
+        <h2>📌 Business Overview & Problem Statement</h2>
+        <p>Blinkit operates in the fast-paced quick-commerce domain. Managing sales performance across diverse product categories and multi-tier outlet locations requires clear visibility into customer purchasing patterns, item visibility, and core revenue drivers.</p>
+        <p>This business intelligence case study processes, cleans, and structures retail metrics to evaluate total revenue, customer satisfaction ratings, and inventory distribution across various store types.</p>
+
+        <h2>📊 Interactive Analytics Dashboard</h2>
+        <p>Below is a visual preview of the Power BI executive overview dashboard constructed to evaluate channel sales performance:</p>
+        
+        <div class="dashboard-container">
+            <img src="./blinkit_dashboard.png" alt="Blinkit Dashboard Preview" class="dashboard-img">
+        </div>
+
+        <h2>🎯 Core Business Insights</h2>
+        <ul>
+            <li><strong>Low Fat vs. Regular Demand:</strong> Low-fat items accounted for over 60% of total sales volume, highlighting a consumer preference for health-conscious grocery options.</li>
+            <li><strong>Outlet Tier Performance:</strong> Tier 3 outlets generated a higher total sales volume compared to Tier 1 outlets, driven by larger store footprints and broader catalog coverage.</li>
+            <li><strong>Item Visibility Impact:</strong> Higher visibility item placements in Tier 1 locations led to a noticeable lift in average order value.</li>
+        </ul>
+
+        <h2>🛠️ Tech Stack & Data Tools</h2>
+        <p><code>Power BI</code> • <code>Excel / Power Query</code> • <code>DAX</code> • <code>Data Modeling</code></p>
+
+</body>
+</html>
