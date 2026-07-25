@@ -7,8 +7,6 @@ Welcome to my portfolio! I specialize in building end-to-end machine learning pi
 
 ## 🚀 Featured Projects
 
-## 🚀 Featured Projects
-
 ### 💳 Credit Card Fraud Detection Pipeline
 * **Context:** TechCrush Capstone Group Project
 * **Tools:** Python, Pandas, Scikit-Learn, XGBoost, SMOTE
