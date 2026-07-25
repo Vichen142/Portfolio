@@ -7,17 +7,19 @@ Welcome to my portfolio! I specialize in building end-to-end machine learning pi
 
 ## 🚀 Featured Projects
 
+## 🚀 Featured Projects
+
 ### 💳 Credit Card Fraud Detection Pipeline
 * **Context:** TechCrush Capstone Group Project
-* **Tools:** Python, Pandas, Scikit-Learn, XGBoost, Streamlit
-* **Summary:** Collaborative machine learning pipeline built to address severe class imbalance in financial transaction datasets. Evaluated Logistic Regression, Random Forest, and XGBoost models to optimize fraud detection precision and recall.
-* **Links:** [View Code (`portfolio.py`)](https://github.com/Vichen142/Portfolio/blob/main/portfolio.py)
+* **Tools:** Python, Pandas, Scikit-Learn, XGBoost, SMOTE
+* **Summary:** End-to-end machine learning solution engineered to handle severe class imbalance and detect financial fraud. Evaluated Logistic Regression, Random Forest, and XGBoost models.
+* **Links:** 📖 [Read Machine Learning Case Study](./fraud-detection.md)
 
 ### 📊 Customer Churn Predictive Engine
 * **Context:** Predictive Analytics Project
-* **Tools:** Python, Scikit-Learn, Pandas, Streamlit
-* **Summary:** Developed a classification model to evaluate user retention indicators and output real-time churn risk predictions based on client behavioral metrics.
-* **Links:** [View Page Source](https://github.com/Vichen142/Portfolio/tree/main/pages)
+* **Tools:** Python, Scikit-Learn, Pandas
+* **Summary:** Built a binary classification pipeline evaluating customer retention indicators to predict client churn risk.
+* **Links:** 📖 [Read Machine Learning Case Study](./churn-prediction.md)
 
 ### 📈 Blinkit Grocery Performance Analytics
 * **Context:** Business Intelligence & Sales Analysis
