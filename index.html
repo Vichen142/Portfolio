@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opeyemi Henry | Data Science & Analytics Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --accent-blue: #38bdf8;
+            --accent-purple: #c084fc;
+            --accent-emerald: #34d399;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Hero Header */
+        header {
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-bottom: 2rem;
+            background: radial-gradient(circle at top, rgba(56, 189, 248, 0.15), transparent 70%);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        header p.subtitle {
+            font-size: 1.2rem;
+            color: var(--accent-emerald);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        header p.bio {
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 1.5rem auto;
+            font-size: 1rem;
+        }
+
+        /* Call to Action Buttons */
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #0284c7, #7e22ce);
+            color: #fff;
+            box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(126, 34, 206, 0.6);
+        }
+
+        .btn-secondary {
+            background: var(--card-bg);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 1.8rem;
+            margin: 3rem 0 1.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        /* Project Cards Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-blue);
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.2);
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .card .badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 20px;
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--accent-blue);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .card .tools {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            color: var(--accent-purple);
+            margin-bottom: 1.5rem;
+        }
+
+        .card-link {
+            color: var(--accent-emerald);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: gap 0.2s ease;
+        }
+
+        .card-link:hover {
+            gap: 0.6rem;
+            text-decoration: underline;
+        }
+
+        /* Toolkit Section */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: rgba(52, 211, 153, 0.15);
+            border-color: var(--accent-emerald);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Opeyemi Henry</h1>
+        <p class="subtitle">Data Analyst & Data Science Practitioner</p>
+        <p class="bio">I specialize in building end-to-end machine learning pipelines, interactive analytics dashboards, and data-driven solutions that turn raw complex data into business value.</p>
+        <div class="cta-buttons">
+            <a href="./HENRY_OPEYEMI_FlowCV_Resume_2026-07-02.pdf" class="btn btn-primary" target="_blank">📄 Download Resume</a>
+            <a href="https://github.com/Vichen142" class="btn btn-secondary" target="_blank">🐙 GitHub Profile</a>
+        </div>
+    </header>
+
+    <h2 class="section-title">🚀 Featured Projects</h2>
+    <div class="projects-grid">
+
+        <!-- Card 1 -->
+        <div class="card">
+            <div>
+                <span class="badge">Machine Learning Pipeline</span>
+                <h3>💳 Credit Card Fraud Detection</h3>
+                <p>Collaborative ML solution engineered to handle severe class imbalance (SMOTE) and detect financial fraud. Evaluated Logistic Regression, Random Forest, and XGBoost models.</p>
+                <div class="tools">Python • Scikit-Learn • XGBoost • SMOTE</div>
+            </div>
+            <a href="./fraud-detection.md" class="card-link">Read Case Study &rarr;</a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <div>
+                <span class="badge">Predictive Analytics</span>
+                <h3>📊 Customer Churn Engine</h3>
+                <p>Binary classification engine evaluating customer retention indicators to predict client churn risk and calculate actionable risk probabilities.</p>
+                <div class="tools">Python • Pandas • XGBoost • Scikit-Learn</div>
+            </div>
+            <a href="./churn-prediction.md" class="card-link">Read Case Study &rarr;</a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+            <div>
+                <span class="badge">Business Intelligence</span>
+                <h3>📈 Blinkit Grocery Analytics</h3>
+                <p>Interactive sales dashboard analyzing retail performance, outlet size metrics, and consumer fat-content purchasing preferences.</p>
+                <div class="tools">Power BI • Excel • DAX • Data Modeling</div>
+            </div>
+            <a href="./blinkit-dashboard.md" class="card-link">View Case Study & Dashboard &rarr;</a>
+        </div>
+
+    </div>
+
+    <h2 class="section-title">🛠️ Core Toolkit</h2>
+    <div class="skills-container">
+        <div class="skill-tag">🐍 Python (Pandas, NumPy)</div>
+        <div class="skill-tag">🤖 Scikit-Learn & XGBoost</div>
+        <div class="skill-tag">📊 Power BI & DAX</div>
+        <div class="skill-tag">🗄️ SQL</div>
+        <div class="skill-tag">🎈 Streamlit</div>
+        <div class="skill-tag">📈 Matplotlib & Seaborn</div>
+        <div class="skill-tag">🐙 Git & GitHub</div>
+        <div class="skill-tag">⚡ LTspice</div>
+    </div>
+
+    <footer>
+        <p>© 2026 Opeyemi Henry. Built with HTML, CSS & GitHub Pages.</p>
+    </footer>
+
+</body>
+</html>
