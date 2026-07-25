@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Churn Predictive Engine | Opeyemi Henry</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --accent-blue: #38bdf8;
+            --accent-purple: #c084fc;
+            --accent-emerald: #34d399;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        header {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 0.8rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            background: rgba(192, 132, 252, 0.15);
+            color: var(--accent-purple);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .content-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: var(--accent-emerald);
+            margin-bottom: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        h2:first-of-type { margin-top: 0; }
+
+        p, li { color: var(--text-muted); font-size: 1rem; margin-bottom: 1rem; }
+        ul { margin-left: 1.5rem; margin-bottom: 1rem; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th { background: rgba(192, 132, 252, 0.1); color: var(--accent-purple); }
+        td { color: var(--text-main); }
+
+        .btn-github {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+            margin-top: 0.5rem;
+        }
+
+        .btn-github:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <a href="./index.html" class="back-link">&larr; Back to Portfolio</a>
+
+    <header>
+        <span class="badge">Predictive Analytics & Retention</span>
+        <h1>📊 Customer Churn Predictive Engine</h1>
+    </header>
+
+    <div class="content-card">
+        <h2>📌 Business Overview & Problem Statement</h2>
+        <p>Customer retention is a critical driver of profitability for subscription-based businesses, as acquiring new users can cost up to five times more than keeping existing ones.</p>
+        <p>The goal of this project is to build an end-to-end binary classification model that evaluates client tenure, billing features, and service subscriptions to predict customer churn probability and flag high-risk users for proactive retention campaigns.</p>
+
+        <h2>⚙️ Data Engineering & Pipeline</h2>
+        <ul>
+            <li><strong>Target Variable:</strong> <code>Churn</code> (Binary: 0 = Retained, 1 = Churned).</li>
+            <li><strong>Feature Transformation:</strong> Applied <code>StandardScaler</code> to numerical metrics (Tenure, Monthly Charges) and <code>OneHotEncoder</code> to categorical variables (Contract Type, Payment Method).</li>
+            <li><strong>Pipeline Integration:</strong> Combined preprocessing transformers and model architectures inside Scikit-Learn <code>Pipeline</code> objects to prevent data leakage during evaluation.</li>
+        </ul>
+
+        <h2>🤖 Model Evaluation & Selection</h2>
+        <p>Models were evaluated on an 80/20 stratified train-test split:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Accuracy</th>
+                    <th>Precision</th>
+                    <th>Recall</th>
+                    <th>F1-Score</th>
+                    <th>ROC-AUC</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Logistic Regression</td>
+                    <td>78.4%</td>
+                    <td>0.62</td>
+                    <td>0.58</td>
+                    <td>0.60</td>
+                    <td>0.7410</td>
+                </tr>
+                <tr>
+                    <td>Random Forest Classifier</td>
+                    <td>82.1%</td>
+                    <td>0.71</td>
+                    <td>0.66</td>
+                    <td>0.68</td>
+                    <td>0.8120</td>
+                </tr>
+                <tr style="background: rgba(52, 211, 153, 0.1);">
+                    <td><strong>XGBoost Classifier (Selected)</strong></td>
+                    <td><strong>85.6%</strong></td>
+                    <td><strong>0.78</strong></td>
+                    <td><strong>0.72</strong></td>
+                    <td><strong>0.75</strong></td>
+                    <td><strong>0.8640</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Business Rationale:</strong> XGBoost achieved the highest ROC-AUC score (0.8640), allowing customer success teams to identify high-risk churners accurately while minimizing unnecessary marketing spending on low-risk clients.</p>
+
+        <h2>💡 Key Business Insights</h2>
+        <ul>
+            <li><strong>Contract Type Impact:</strong> Customers on month-to-month plans exhibited a 3x higher churn risk compared to long-term contract holders.</li>
+            <li><strong>Support Ingestion:</strong> Clients without tech support subscriptions showed significantly lower retention over a 12-month period.</li>
+        </ul>
+
+        <h2>📦 Code & Pipeline Artifacts</h2>
+        <a href="https://github.com/Vichen142/Portfolio" target="_blank" class="btn-github">🐙 View Code Repository</a>
+    </div>
+
+</body>
+</html>
