@@ -187,21 +187,52 @@
             text-decoration: underline;
         }
 
-        /* Toolkit Section */
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
+        /* Toolkit & Skill Bars Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
         }
 
-        .skill-tag {
-            background: rgba(255, 255, 255, 0.05);
+        .skill-card {
+            background: var(--card-bg);
             border: 1px solid var(--border-color);
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: background 0.3s ease;
+            padding: 1rem 1.25rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .skill-level {
+            font-size: 0.75rem;
+            color: var(--accent-emerald);
+            font-weight: 600;
+            background: rgba(52, 211, 153, 0.1);
+            padding: 0.15rem 0.5rem;
+            border-radius: 12px;
+        }
+
+        .bar-container {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            border-radius: 10px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+            transition: width 1s ease-in-out;
         }
 
         .skill-tag:hover {
@@ -276,16 +307,75 @@
         </div>
 
     </div>
-    <h2 class="section-title">🛠️ Core Toolkit</h2>
-    <div class="skills-container">
-        <div class="skill-tag">🐍 Python (Pandas, NumPy)</div>
-        <div class="skill-tag">🤖 Scikit-Learn & XGBoost</div>
-        <div class="skill-tag">📊 Power BI & DAX</div>
-        <div class="skill-tag">🗄️ SQL</div>
-        <div class="skill-tag">🎈 Streamlit</div>
-        <div class="skill-tag">📈 Matplotlib & Seaborn</div>
-        <div class="skill-tag">🐙 Git & GitHub</div>
-        <div class="skill-tag">⚡ LTspice</div>
+    <h2 class="section-title">🛠️ Core Toolkit & Technical Proficiency</h2>
+    <div class="skills-grid">
+
+        <!-- Skill 1 -->
+        <div class="skill-card">
+            <div class="skill-info">
+                <span>🐍 Python (Pandas, NumPy, Scikit-Learn)</span>
+                <span class="skill-level">Advanced</span>
+            </div>
+            <div class="bar-container">
+                <div class="bar-fill" style="width: 90%;"></div>
+            </div>
+        </div>
+
+        <!-- Skill 2 -->
+        <div class="skill-card">
+            <div class="skill-info">
+                <span>🤖 Machine Learning & XGBoost</span>
+                <span class="skill-level">Proficient</span>
+            </div>
+            <div class="bar-container">
+                <div class="bar-fill" style="width: 85%;"></div>
+            </div>
+        </div>
+
+        <!-- Skill 3 -->
+        <div class="skill-card">
+            <div class="skill-info">
+                <span>📊 Power BI & DAX</span>
+                <span class="skill-level">Advanced</span>
+            </div>
+            <div class="bar-container">
+                <div class="bar-fill" style="width: 88%;"></div>
+            </div>
+        </div>
+
+        <!-- Skill 4 -->
+        <div class="skill-card">
+            <div class="skill-info">
+                <span>🎈 Streamlit & Web Deployment</span>
+                <span class="skill-level">Proficient</span>
+            </div>
+            <div class="bar-container">
+                <div class="bar-fill" style="width: 80%;"></div>
+            </div>
+        </div>
+
+        <!-- Skill 5 -->
+        <div class="skill-card">
+            <div class="skill-info">
+                <span>🗄️ SQL & Data Cleaning</span>
+                <span class="skill-level">Proficient</span>
+            </div>
+            <div class="bar-container">
+                <div class="bar-fill" style="width: 82%;"></div>
+            </div>
+        </div>
+
+        <!-- Skill 6 -->
+        <div class="skill-card">
+            <div class="skill-info">
+                <span>📈 Data Visualization (Matplotlib/Seaborn)</span>
+                <span class="skill-level">Advanced</span>
+            </div>
+            <div class="bar-container">
+                <div class="bar-fill" style="width: 85%;"></div>
+            </div>
+        </div>
+
     </div>
 
     <footer>
