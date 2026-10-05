@@ -1,200 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premier League Monte Carlo Predictor & Odds Engine | Opeyemi Henry</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #0f172a;
-            --card-bg: rgba(30, 41, 59, 0.7);
-            --accent-blue: #38bdf8;
-            --accent-purple: #c084fc;
-            --accent-emerald: #34d399;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --border-color: rgba(255, 255, 255, 0.1);
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            padding: 2rem 1rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .back-link {
-            display: inline-block;
-            margin-bottom: 1.5rem;
-            color: var(--accent-blue);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        header {
-            margin-bottom: 2rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        h1 {
-            font-size: 2.2rem;
-            color: var(--text-main);
-            margin-bottom: 0.5rem;
-        }
-
-        .badge {
-            display: inline-block;
-            font-size: 0.8rem;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            background: rgba(192, 132, 252, 0.15);
-            color: var(--accent-purple);
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .content-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        h2 {
-            font-size: 1.4rem;
-            color: var(--accent-emerald);
-            margin-bottom: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        h2:first-of-type { margin-top: 0; }
-
-        p, li { color: var(--text-muted); font-size: 1rem; margin-bottom: 1rem; }
-        ul { margin-left: 1.5rem; margin-bottom: 1rem; }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-            background: rgba(15, 23, 42, 0.5);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        th, td {
-            padding: 0.75rem 1rem;
-            text-align: left;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        th { background: rgba(192, 132, 252, 0.1); color: var(--accent-purple); }
-        td { color: var(--text-main); font-size: 0.95rem; }
-
-        .btn-live {
-            display: inline-block;
-            background: linear-gradient(135deg, #0284c7, #7e22ce);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
-        }
-
-        .btn-github {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            border: 1px solid var(--border-color);
-        }
-
-        .btn-github:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Premier League Monte Carlo Predictor | Case study | Opeyemi Henry</title>
+  <meta name="description" content="Case study: a Random Forest and Monte Carlo odds engine that forecasts Premier League title, qualification and relegation odds.">
+  <meta name="theme-color" content="#0E0E10">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="case-study.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
+  <div class="progress" id="progress"></div>
 
-    <a href="./index.html" class="back-link">&larr; Back to Portfolio</a>
-
-    <header>
-        <span class="badge">Machine Learning & Stochastic Modeling</span>
-        <h1>⚽ Premier League Monte Carlo Champion Predictor & Odds Engine</h1>
-    </header>
-
-    <div class="content-card">
-        <h2>📌 System Overview</h2>
-        <p>The <strong>Premier League Season Simulator & Odds Radar</strong> is a full-stack, machine learning–powered forecasting web application designed to project league outcomes dynamically across the 38-match calendar.</p>
-        <p>Rather than relying on static pre-season predictions, the system couples a trained <strong>Random Forest Classifier</strong> with a <strong>1,000-iteration Monte Carlo simulation engine</strong>. As users ingest real matchday scores, the application locks in actual earned points, recalculates head-to-head probabilities for all remaining unplayed fixtures, and re-evaluates title odds, Champions League qualification (Top 4) probabilities, and relegation risks in real time.</p>
-
-        <h2>⚙️ Core Architecture & Features</h2>
+  <header class="nav">
+    <div class="wrap">
+      <a href="index.html" class="brand">Henry</a>
+      <nav aria-label="Main">
         <ul>
-            <li><strong>3-Way Match Outcome Engine:</strong> A Random Forest classifier paired with dynamic Elo ratings and rolling team form metrics (goals scored, shots on target, form points) predicts Home Win, Draw, and Away Win probabilities.</li>
-            <li><strong>Monte Carlo Simulation Core:</strong> Simulates the remaining fixture calendar 1,000 times per update via vectorized NumPy execution. Ingested matches are removed from future simulations to ground projections in actual standings.</li>
-            <li><strong>Reactive Dual-View Dashboard:</strong> Visual glassmorphism cards track title favorites alongside a 20-team projection table (Title %, UCL %, Relegation %, Projected PTS).</li>
-            <li><strong>Dynamic Match Ingestion & State Persistence:</strong> Complete matchday score recording (GW 1–38) with rollback capabilities, serialized directly to structured JSON state.</li>
+          <li><a class="back" href="index.html#work">&larr; All work</a></li>
+          <li class="hide-sm"><a href="index.html#toolkit">Toolkit</a></li>
+          <li class="hide-sm"><a href="index.html#contact">Contact</a></li>
         </ul>
+      </nav>
+    </div>
+  </header>
 
-        <h2>🛠️ Full-Stack Technical Stack</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Architecture Layer</th>
-                    <th>Technologies & Frameworks</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Frontend UI</strong></td>
-                    <td>Reflex (compiled to Next.js, React, Radix UI, Tailwind CSS)</td>
-                </tr>
-                <tr>
-                    <td><strong>Backend Runtime</strong></td>
-                    <td>Reflex (Python async server runtime)</td>
-                </tr>
-                <tr>
-                    <td><strong>Machine Learning</strong></td>
-                    <td>Scikit-Learn (Random Forest), Joblib, Pandas, NumPy</td>
-                </tr>
-                <tr>
-                    <td><strong>Mathematical Modeling</strong></td>
-                    <td>Elo Rating Algorithm, Monte Carlo Stochastic Simulation</td>
-                </tr>
-                <tr>
-                    <td><strong>State Persistence</strong></td>
-                    <td>Local structured JSON state management</td>
-                </tr>
-                <tr>
-                    <td><strong>Cloud Deployment</strong></td>
-                    <td>Reflex Cloud Infrastructure</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2>🚀 Live Interactive Deployment</h2>
-        <p>Explore real-time title probabilities, ingest matchday scores, or run Monte Carlo simulations live:</p>
-        
-        <div style="display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap;">
-            <a href="https://pl-model-gold-apple.reflex.run" target="_blank" class="btn-live">
-                🚀 Launch Live Reflex App
-            </a>
-            <a href="https://github.com/Vichen142" target="_blank" class="btn-github">
-                🐙 View Repository
-            </a>
+  <main>
+    <div class="hero">
+      <div class="glow"></div>
+      <div class="wrap">
+        <p class="kicker fade-in" style="--d:.1s"><i></i>Machine learning and simulation</p>
+        <h1 class="title" data-split>Premier League Monte Carlo Predictor</h1>
+        <p class="summary fade-in" style="--d:.9s">A full-stack odds radar that turns match predictions into season odds: who wins the title, who qualifies for Europe, and who goes down.</p>
+        <div class="actions fade-in" style="--d:1.1s">
+          <!-- REPLACE the two links below -->
+          <a class="btn solid" href="#" target="_blank" rel="noopener">Open the app</a>
+          <a class="btn" href="https://github.com/Vichen142/pl_model" target="_blank" rel="noopener">View the code</a>
         </div>
+        <div class="meta fade-in" style="--d:1.3s">
+          <div><b>Type</b><span>Machine learning and simulation</span></div>
+          <div><b>Method</b><span>Random Forest, Elo, Monte Carlo</span></div>
+          <div><b>Stack</b><span>Python, Reflex</span></div>
+          <div><b>Delivery</b><span>Web app on Reflex Cloud</span></div>
+        </div>
+
+        <div class="viz reveal">
+          <div class="viz-top">
+            <div class="readout"><em class="b" id="count">0</em> / 1,000 simulated seasons</div>
+            <div class="ctrl"><button class="pill-btn" id="replay">Replay</button></div>
+          </div>
+          <canvas id="viz" role="img" aria-label="Histogram of points totals from 1,000 simulated seasons"></canvas>
+          <p class="caption">Illustration of the method: one team with fixed win and draw chances plays 38 matches, 1,000 times. Each bar counts how often a season ended on that points total. Pink bars are seasons of 80 points or more.</p>
+        </div>
+      </div>
     </div>
 
+    <section>
+      <div class="wrap split">
+        <h2><span class="mask"><span>Overview</span></span></h2>
+        <p class="statement" id="statement">This project combines three ideas: Elo ratings to measure team strength, a Random Forest to predict each match, and a 1,000-iteration Monte Carlo simulation that plays the rest of the season over and over to turn those predictions into title odds, qualification chances and relegation risk.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap split">
+        <h2><span class="mask"><span>The problem</span></span></h2>
+        <div class="prose reveal"><p>Predicting one match is not the same as predicting a season. Even a good match model says nothing about the table, because the title race depends on dozens of uncertain results that add up.</p><p>I wanted a way to turn match-level probabilities into <strong>season-level odds</strong>, and to present them in an app that anyone could open and explore without reading code.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap split">
+        <h2><span class="mask"><span>How I built it</span></span></h2>
+        <ol class="steps">
+          <li class="reveal"><h3>Rate every team with Elo</h3><p>Elo ratings give each team a strength score that moves with results, so recent form counts for more than old history.</p></li>
+          <li class="reveal"><h3>Train a match predictor</h3><p>A Scikit-Learn Random Forest classifier learns from past matches and returns a probability for each outcome, not just a single guess.</p></li>
+          <li class="reveal"><h3>Simulate the season</h3><p>For every fixture the simulator draws a result from those probabilities and plays out the whole season. One run is one possible future.</p></li>
+          <li class="reveal"><h3>Repeat it 1,000 times</h3><p>Running the season 1,000 times produces a spread of possible tables. Counting how often each team wins the title, reaches a qualification place or finishes in the bottom three gives the odds.</p></li>
+          <li class="reveal"><h3>Ship it as an app</h3><p>A Reflex front end lets anyone open the odds radar and explore the numbers. It is deployed on Reflex Cloud.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap split">
+        <h2><span class="mask"><span>At a glance</span></span></h2>
+        <div class="stats reveal">
+          <div class="stat"><b data-count="1000">1000</b><span>season simulations per run</span></div>
+          <div class="stat"><b data-count="20">20</b><span>teams simulated across the league</span></div>
+          <div class="stat"><b data-count="3">3</b><span>outcomes forecast: title, qualification and relegation</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap split">
+        <h2><span class="mask"><span>See it</span></span></h2>
+        <!-- Put your screenshot in an "images" folder and match the file name below -->
+        <figure class="shot reveal">
+          <img src="images/premier-league.png" alt="Screenshot of the Premier League Monte Carlo Predictor app">
+          <div class="ph">Add a screenshot: save it as <b>images/premier-league.png</b></div>
+        </figure>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap split">
+        <h2><span class="mask"><span>Tools used</span></span></h2>
+        <ul class="pills reveal"><li>Python</li><li>Reflex</li><li>Scikit-Learn</li><li>Random Forest</li><li>Elo ratings</li><li>Monte Carlo simulation</li><li>Reflex Cloud</li></ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap split">
+        <h2><span class="mask"><span>What I learned</span></span></h2>
+        <div class="prose reveal"><p>The key lesson was the gap between <strong>predicting a match</strong> and <strong>predicting a season</strong>. The match model is only half of the answer. The simulation is what lets uncertainty add up across the whole fixture list, and running it many times is far more honest than showing one predicted table.</p><p>What I would do next: backtest the simulator against past seasons to check that the odds it produces are well calibrated.</p></div>
+      </div>
+    </section>
+
+    <div class="next">
+      <div class="wrap">
+        <small>Next case study</small>
+        <a href="fraud-detection.html">Credit Card Fraud Detection</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap"><span>&copy; 2026 Opeyemi Henry</span><a href="index.html">Back to portfolio</a></div>
+  </footer>
+
+  <script src="case-study.js"></script>
+<script>
+(() => {
+  const c = document.getElementById('viz'), x = c.getContext('2d'), cnt = document.getElementById('count');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const MIN = 40, MAX = 100, STEP = 2, NB = (MAX - MIN) / STEP, TOTAL = 1000;
+  let bins, n, w, h, run = false;
+  const season = () => { let p = 0; for (let i = 0; i < 38; i++) { const r = Math.random(); p += r < .5 ? 3 : (r < .75 ? 1 : 0); } return p; };
+  const add = k => { for (let i = 0; i < k && n < TOTAL; i++, n++) { const b = Math.min(NB - 1, Math.max(0, Math.floor((season() - MIN) / STEP))); bins[b]++; } };
+  function size() { const d = Math.min(devicePixelRatio || 1, 2); w = c.clientWidth; h = c.clientHeight; c.width = w * d; c.height = h * d; x.setTransform(d, 0, 0, d, 0, 0); }
+  function draw() {
+    x.clearRect(0, 0, w, h);
+    const base = h - 26, mx = Math.max(10, ...bins), bw = w / NB;
+    for (let i = 0; i < NB; i++) {
+      const pts = MIN + i * STEP, bh = (bins[i] / mx) * (base - 14);
+      x.fillStyle = pts >= 80 ? '#FF6B8B' : '#8DB4FF'; x.globalAlpha = .9;
+      x.fillRect(i * bw + 2, base - bh, bw - 4, bh);
+    }
+    x.globalAlpha = 1; x.fillStyle = '#8E8E97'; x.font = '12px "DM Sans", sans-serif'; x.textAlign = 'center';
+    for (let p = MIN; p <= MAX; p += 10) x.fillText(p + ' pts', ((p - MIN) / STEP) * bw, h - 6);
+    cnt.textContent = n.toLocaleString();
+  }
+  function frame() { if (!run) return; add(8); draw(); if (n >= TOTAL) run = false; else requestAnimationFrame(frame); }
+  function start() { bins = new Array(NB).fill(0); n = 0; if (reduce) { add(TOTAL); draw(); return; } run = true; requestAnimationFrame(frame); }
+  size(); bins = new Array(NB).fill(0); n = 0; draw();
+  addEventListener('resize', () => { size(); draw(); });
+  document.getElementById('replay').addEventListener('click', () => { run = false; start(); });
+  new IntersectionObserver((es, o) => { if (es[0].isIntersecting) { start(); o.disconnect(); } }, { threshold: .3 }).observe(c);
+})();
+</script>
 </body>
 </html>
